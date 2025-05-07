@@ -15,14 +15,28 @@
         <!-- General Pyodide messages will appear here -->
     </div>
 
-    <hr> <!-- Separator -->
+    <hr> 
 
     <h2>1. Upload Data</h2>
     <input type="file" id="file-upload" accept=".csv"> 
     <button id="process-button">Process CSV</button>
 
     <div id="dataframe-output">
-        <!-- DataFrame info will appear here -->
+        <!-- DataFrame info (head) will appear here -->
+    </div>
+
+    <hr>
+
+    <!-- **NEW: Analysis Section** -->
+    <h2>2. Basic Analysis</h2>
+    <div id="analysis-controls">
+        <button id="show-info-button" disabled>Show DataFrame Info</button>
+        <button id="show-describe-button" disabled>Show Descriptive Stats</button>
+        <!-- Add more buttons here for other analyses later -->
+    </div>
+
+    <div id="analysis-output">
+        <!-- Analysis results will appear here -->
     </div>
 
     <script src="script.js"></script>
