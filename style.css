@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+#pyodide-output p, #dataframe-output p {
+    margin: 5px 0;
+    padding: 5px;
+    border-left: 3px solid #eee;
+}
+
+#pyodide-output p.success, #dataframe-output p.success {
+    border-left-color: green;
+}
+#pyodide-output p.error, #dataframe-output p.error {
+    border-left-color: red;
+}
+
+/* Basic table styling */
+table {
+    border-collapse: collapse;
+    width: auto; /* Or 100% if you want it full width */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* From pandas to_html classes, if we want to use them without Bootstrap */
+.table .table-striped /* Not really doing striping here without more CSS/JS */ { 
+    /* basic styles */
+}
