@@ -1,42 +1,145 @@
 body {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     margin: 20px;
     line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
 }
 
-#pyodide-output p, #dataframe-output p {
-    margin: 5px 0;
-    padding: 5px;
-    border-left: 3px solid #eee;
+h1, h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
 }
 
-#pyodide-output p.success, #dataframe-output p.success {
-    border-left-color: green;
-}
-#pyodide-output p.error, #dataframe-output p.error {
-    border-left-color: red;
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 30px 0;
 }
 
-/* Basic table styling */
+input[type="file"], select {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+    background-color: #2980b9;
+}
+
+#loading-message, #initial-instruction {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-left: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.log-message, .success-message, .error-message {
+    margin: 8px 0;
+    padding: 12px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+.log-message {
+    border-left-color: #6c757d; 
+    background-color: #f8f9fa;
+}
+
+.success-message {
+    border-left-color: #28a745; 
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.error-message {
+    border-left-color: #dc3545; 
+    color: #721c24;
+    background-color: #f8d7da;
+}
+
+#analysis-output pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    border: 1px solid #dee2e6;
+    font-size: 0.9em;
+    max-height: 400px; /* Prevent very long info outputs from dominating */
+    overflow-y: auto;
+}
+
 table {
     border-collapse: collapse;
-    width: auto; /* Or 100% if you want it full width */
+    width: auto; 
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
+    background-color: white;
+    font-size: 0.9em;
 }
 
 th, td {
     text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #e9ecef;
+    font-weight: bold;
 }
 
-/* From pandas to_html classes, if we want to use them without Bootstrap */
-.table .table-striped /* Not really doing striping here without more CSS/JS */ { 
-    /* basic styles */
+tr:nth-child(even) {
+    /* background-color: #f8f9fa; */ /* Subtle striping if desired */
 }
+
+#chart-output img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    background-color: white; /* In case of transparent PNGs */
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Optional: Basic spinner animation for loading messages */
+/*
+#loading-message.processing-spinner::after,
+#dataframe-output p.processing-status::after,
+#analysis-output p.processing-status::after,
+#chart-output p.processing-status::after {
+    content: ' ⏳';
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+*/
